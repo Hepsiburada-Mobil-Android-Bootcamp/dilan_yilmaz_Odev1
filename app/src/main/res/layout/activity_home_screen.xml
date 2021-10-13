@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeScreen">
+    android:background="@color/white"
+    tools:context=".activities.HomeScreen"
+    android:fillViewport="true"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,6 +19,7 @@
             style="@style/home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="240dp"
             android:fontFamily="@font/poppins_medium"
             android:lineHeight="28dp"
@@ -23,36 +27,58 @@
             android:textColor="@color/dark"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/location_textView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.916"
+            app:layout_constraintHorizontal_bias="0.928"
             app:layout_constraintStart_toEndOf="@+id/main_icon"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/location_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="416dp"
+            android:layout_marginTop="4dp"
             android:text="@string/location_textView"
             android:textColor="@color/light"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/home_textView"
+            app:layout_constraintTop_toBottomOf="@+id/home_textView"
             tools:ignore="MissingConstraints" />
 
         <ImageView
             android:id="@+id/main_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="8dp"
             android:contentDescription="TODO"
             android:src="@drawable/ic_vector"
             app:flow_firstHorizontalBias="1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/home_textView" />
+
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/popularres"
+            app:layout_constraintStart_toStartOf="@+id/rw_1"
+            app:layout_constraintTop_toBottomOf="@+id/rw_1" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/rw_2"
+            app:layout_constraintEnd_toEndOf="@+id/rw_2"
+            app:layout_constraintHorizontal_bias="0.936"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/rw_1"
+            app:layout_constraintVertical_bias="0.56"
+            app:srcCompat="@drawable/ic_ion_options_outline" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rw_1"
@@ -72,38 +98,16 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rw_2"
-            android:layout_width="313dp"
-            android:layout_height="246dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="314dp"
+            android:layout_height="262dp"
+            android:paddingLeft="0dp"
             app:layout_constraintBaseline_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/textView3"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-        <TextView
-            android:id="@+id/textView3"
-            style="@style/home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="28dp"
-            android:fontFamily="@font/poppins_medium"
-            android:text="@string/popularres"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/rw_1"
-            app:layout_constraintTop_toBottomOf="@+id/rw_1" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/rw_2"
-            app:layout_constraintEnd_toEndOf="@+id/rw_2"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/textView3"
-            app:layout_constraintTop_toBottomOf="@+id/rw_1"
-            app:layout_constraintVertical_bias="0.682"
-            app:srcCompat="@drawable/ic_ion_options_outline" />
-
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            app:layout_constraintVertical_bias="0.132"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_rw2_card" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
