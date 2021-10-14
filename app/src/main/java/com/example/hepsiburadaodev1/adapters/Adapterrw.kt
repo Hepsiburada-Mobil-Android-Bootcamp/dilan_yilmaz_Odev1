@@ -9,7 +9,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.hepsiburadaodev1.R
 import com.example.hepsiburadaodev1.models.RWOneModel
 
-class Adapterrw(private val mList: List<RWOneModel>) : RecyclerView.Adapter<Adapterrw.ViewHolder>() {
+class Adapterrw(
+    private val mList: List<RWOneModel>,
+    private val itemClickListener: ItemClickListener
+) : RecyclerView.Adapter<Adapterrw.ViewHolder>() {
+
+    interface ItemClickListener {
+        fun onItemClicked(adapterrw: RWOneModel)
+    }
 
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -25,13 +32,15 @@ class Adapterrw(private val mList: List<RWOneModel>) : RecyclerView.Adapter<Adap
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         val ItemsViewModel = mList[position]
-
         // sets the image to the imageview from our itemHolder class
-        holder.imageView.setImageResource(ItemsViewModel.productImage)
+
+        holder.imageButton.setImageResource(ItemsViewModel.productImage)
+        holder.imageButton.setOnClickListener {
+            itemClickListener.onItemClicked(mList[position])
+        }
 
         // sets the text to the textview from our itemHolder class
         holder.textView.text = ItemsViewModel.productName
-
     }
 
     // return the number of the items in the list
@@ -41,7 +50,13 @@ class Adapterrw(private val mList: List<RWOneModel>) : RecyclerView.Adapter<Adap
 
     // Holds the views for adding it to image and text
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
-        val imageView: ImageView = itemView.findViewById(R.id.rw1_image)
+        val imageButton: ImageView = itemView.findViewById(R.id.rw1_image)
         val textView: TextView = itemView.findViewById(R.id.rw1_image_name)
+
     }
+
 }
+
+
+
+

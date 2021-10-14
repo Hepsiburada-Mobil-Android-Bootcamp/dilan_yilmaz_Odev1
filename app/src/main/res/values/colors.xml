@@ -11,5 +11,5 @@
     <color name="light">#6E80B0</color>
     <color name="purple_1">#6D61F2</color>
     <color name="extralight">#F8F8FA</color>
-<color name="card_background">#00000000</color>
+    <color name="card_background">#00000000</color>
 </resources>

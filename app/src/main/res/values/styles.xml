@@ -3,7 +3,7 @@
     <style name="home">
 
         <item name="android:textSize">
-            18sp
+            @dimen/_14sdp
         </item>
 
         <item name="android:textColor">

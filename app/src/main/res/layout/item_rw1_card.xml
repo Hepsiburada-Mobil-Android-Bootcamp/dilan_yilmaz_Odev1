@@ -3,17 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="80dp"
     android:layout_height="82dp"
-android:background="@color/card_background"
+    android:background="@color/card_background"
     android:gravity="center"
     android:orientation="vertical">
 
     <ImageButton
         android:id="@+id/rw1_image"
-        android:padding="16dp"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:background="@drawable/rw1style"
+        android:background="@drawable/bcolor"
+
         android:contentDescription="TODO"
+        android:onClick="on"
+        android:padding="16dp"
         android:src="@drawable/ic_ion_fast_food_outline"
         tools:ignore="SpeakableTextPresentCheck"></ImageButton>
 
