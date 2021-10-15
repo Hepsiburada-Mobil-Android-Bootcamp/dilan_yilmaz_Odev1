@@ -9,4 +9,8 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="gradient_color_button">Gradient Color Button</string>
+    <string name="todo">TODO</string>
+    <string name="foodninja">FoodNinja</string>
+    <string name="forgot_pass">Forgot Your Password?</string>
 </resources>
